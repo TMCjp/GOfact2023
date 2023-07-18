@@ -45,8 +45,8 @@ updateGO <- function(ver = format(Sys.time(), "%Y%m%d"), dir = system.file(packa
 
       goids <- go2child[[ng]]
 
-      goids <-
-        goids[names(goids) == 'is_a' | names(goids) == 'part_of']
+      # goids <- goids[names(goids) == 'is_a' | names(goids) == 'part_of']
+      goids <- goids[names(goids) == 'isa' | names(goids) == 'part of']
 
       goids <- goids[is.na(go[goids, 'hie'])]
 
