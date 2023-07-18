@@ -1,0 +1,11 @@
+Package: GOfact
+Type: Package
+Title: Ontology Enrichment Analysis
+Version: 0.1.0
+Author: tmcjp;lid;
+Maintainer: lidong <lidong.bprc@foxmail.com>
+Description: Ontology Enrichment Analysis of a gene set. Given a vector of genes or a data.frame which with multicol genes, this function will return the enrichment Ontology categories after FDR control.
+Imports: xlsx, DT, networkD3, msigdbr
+License: Artistic-2.0
+Encoding: UTF-8
+LazyData: true
