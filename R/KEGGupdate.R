@@ -201,7 +201,7 @@ updateKOA <- function(org = "human",
   kk <- keys(OrgDb, keytype = keytype)
 
   goAnno <-
-    select(
+    AnnotationDbi::select(
       OrgDb,
       keys = kk,
       keytype = keytype,
