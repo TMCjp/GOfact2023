@@ -140,7 +140,7 @@ updateGOA <- function (org = "human", ver = format(Sys.time(), "%Y%m%d"),
       OrgDb <- eval(parse(text = OrgDb.name))
       keytype <- "ENTREZID"
       kk <- keys(OrgDb, keytype = keytype)
-      goAnno <- select(OrgDb, keys = kk, keytype = keytype,
+      goAnno <- AnnotationDbi::select(OrgDb, keys = kk, keytype = keytype,
                        columns = c("GOALL", "ONTOLOGYALL", "SYMBOL"))
       goAnno <- unique(goAnno[!is.na(goAnno$GOALL), ])
       save(goAnno, file = goa.tmp.Rdata.file)
