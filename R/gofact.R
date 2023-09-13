@@ -272,7 +272,8 @@ gofact <- function(gene,
     result$ratio <- round(result$npro / result$Npro, digits = 4)
     result$bg.ratio <-
       round(result$nall / result$Nall, digits = 4)
-    result$ER <- round(result$ratio / result$bg.ratio, digits = 4)
+    # result$ER <- round(result$ratio / result$bg.ratio, digits = 4)
+    result$ER <- round((result$npro / result$Npro) / (result$nall / result$Nall), digits = 4)
     result$exp <-
       round(result$nall / result$Nall * result$Npro, digits = 4)
 
