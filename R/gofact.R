@@ -1,6 +1,7 @@
 #gofact#####
 gofact <- function(gene,
            slim = "generic",
+           p.digits = 6,
            org = "human",
            ver = "latest",
            dir = system.file(package = "GOfact")){
@@ -288,7 +289,7 @@ gofact <- function(gene,
       ER <- result[goid, 'ER']
       p.h <-
         phyper(npro - 1, nall, Nall - nall, Npro, lower.tail = F)
-      p.h <- round(p.h, digits = 4)
+      p.h <- round(p.h, digits = p.digits)
       if (ER >= 1) {
         result[goid, 'p.value'] <- p.h
       } else{
@@ -313,7 +314,7 @@ gofact <- function(gene,
 
     p.adj <-
       p.adjust(result$p.value, method = 'BH')  #BH
-    p.adj <- round(p.adj, digits = 4)
+    p.adj <- round(p.adj, digits = p.digits)
     result$p.value.adj <- p.adj
 
 
