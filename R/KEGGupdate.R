@@ -120,7 +120,7 @@ updateKOA <- function(org = "human",
 
 
   ### KEGG api parse
-  kegg_api <- paste0("http://rest.kegg.jp/link/", species, "/pathway")
+  kegg_api <- paste0("https://rest.kegg.jp/link/", species, "/pathway")
   content <- tryCatch(suppressWarnings(readLines(kegg_api)),
                       error = function(e) NULL)
 
